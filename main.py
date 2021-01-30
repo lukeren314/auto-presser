@@ -1,8 +1,11 @@
 import pyautogui
+import keyboard
 import time
 
 MAIN_DELAY = 1
 
+ACTIVATE_HOTKEY = '`'
+SHUTDOWN_HOTKEY = 'ctrl+shift+del'
 switch = False
 on = True
 
@@ -18,24 +21,31 @@ def hold_click():
 def release_click():
     pass
 
-def press_button(key, duration):
-    pass
+def press_button(key, duration=0.01):
+    hold_button(key)
+    wait(duration)
+    release_button(key)
 
 def hold_button(key):
-    pass
+    pyautogui.keyDown(key)
 
 def release_button(key):
-    pass
+    pyautogui.keyUp(key)
 
 def wait(time):
-    pass
+    time.sleep(time)
 
 def doPresses():
     pass
 
-
+def activate():
+    global switch
+    switch = not switch
+    print(f"Switch {('On' if switch else 'Off')}")
 
 if __name__ == "__main__":
+    keyboard.add_hotkey(ACTIVATE_HOTKEY, activate)
+    keyboard.add_hotkey(ACTIVATE_HOTKEY, activate)
     while on:
         while switch:
             doPresses()
