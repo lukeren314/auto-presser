@@ -35,14 +35,14 @@ def hold_button(key):
 def release_button(key):
     pyautogui.keyUp(key)
 
-def wait(time):
-    time.sleep(time)
+def wait(t):
+    time.sleep(t)
 
 
 
 
 def doPresses():
-    pass
+    click()
 
 def activate():
     global switch
