@@ -1,3 +1,3 @@
 Auto-Presser
 
-It presses keys and clicks for you
+It clicks and presses keys for you
