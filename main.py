@@ -6,18 +6,20 @@ MAIN_DELAY = 1
 switch = False
 on = True
 
-def move_mouse_to(x, y):
-    pass
+def move_mouse_to(x, y, duration=0):
+    pyautogui.moveTo(x, y, duration=duration)
 
-def click(duration):
-    pass
+def click(button="left", duration=0.01):
+    pyautogui.mouseDown(button=button)
+    wait(duration)
+    pyautogui.mouseUp(button=button)
 
-def hold_click():
-    pass
+def hold_click(button="left"):
+    pyautogui.mouseDown(button=button)
 
-def release_click():
-    pass
-
+def release_click(button="left"):
+    pyautogui.mouseUp(button=button)
+#up is jeremy down is luke
 def press_button(key, duration):
     pass
 
@@ -29,6 +31,9 @@ def release_button(key):
 
 def wait(time):
     pass
+
+
+
 
 def doPresses():
     pass
